@@ -35,4 +35,24 @@
 function saludar(nombre){
   return `Hola ${nombre}`;
 }
-module.exports.saludar = saludar;
+
+// En este modulo "saludo" vamos a definir una segunda funcion, vamos a saludar al usuario diciendo "hola mundo"
+function saludarHolaMundo(){
+  return '¡Hola, Mundo!';
+}
+
+// module.exports.saludar = saludar;
+// module.exports.saludarHolaMundo = saludarHolaMundo;
+// En lugar de tener 2 líneas una para cada una de las propiedades, ya que estamos especificando que el objeto de exportaciones  debe ser este objeto ( el que esta alla abajo de estas lineas)
+
+// Estas 2 opciones equivalentes todo depende del uso que se le de o la necesidad que sea requerida
+
+
+// Otra forma alternativa de exportar elementos que es mas concisa y mas facil de leer sera algo equivalente a lo que se hizo anteriormente
+// Asignamos un objeto, recuerda que "module.exports" es un objeto vacio inicialmente asi que si le asignamos un objeto
+module.exports = {
+  // Asignaremos un objeto con las propiedades y los valores que queremos
+  saludar: saludar,
+  saludarHolaMundo: saludarHolaMundo
+};
+
