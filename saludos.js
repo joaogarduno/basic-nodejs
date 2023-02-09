@@ -43,16 +43,30 @@ function saludarHolaMundo(){
 
 // module.exports.saludar = saludar;
 // module.exports.saludarHolaMundo = saludarHolaMundo;
-// En lugar de tener 2 líneas una para cada una de las propiedades, ya que estamos especificando que el objeto de exportaciones  debe ser este objeto ( el que esta alla abajo de estas lineas)
 
-// Estas 2 opciones equivalentes todo depende del uso que se le de o la necesidad que sea requerida
+// En lugar de tener 2 líneas una para cada una de las propiedades, ya que estamos especificando que el objeto de exportaciones debe ser este objeto ( el que esta debajo de estas lineas)
+
+// Estas 2 opciones equivalentes todo depende del uso que se le de o la necesidad que sea requerida.
 
 
 // Otra forma alternativa de exportar elementos que es mas concisa y mas facil de leer sera algo equivalente a lo que se hizo anteriormente
 // Asignamos un objeto, recuerda que "module.exports" es un objeto vacio inicialmente asi que si le asignamos un objeto
+
+// Sintaxis para exportar las funciones
 module.exports = {
   // Asignaremos un objeto con las propiedades y los valores que queremos
   saludar: saludar,
   saludarHolaMundo: saludarHolaMundo
 };
 
+
+// Sintaxis de desestructuración y require()
+// Esta es una alternativa muy importante para incluir distintos elementos de este modulo "const saludos = require('./saludos.js');"
+// Porque puedes obtener distintos elementos exportados de un mismo modulo, pero no necesariamente vas a necesitar usar todos los elementos, es decir no necesitamos todo el objeto de exportacion, para eso tenemos una sintaxis especifica que veremos en esta siguiente parte
+
+
+// Esta sintaxis alternativa para incluir elementos de un modulo, para no tener que incluir todos los elementos del modulo que estamos especificando "const saludos = require('./saludos.js');".
+// Por ejemplo digamos que "app.js" solo planeamos llamar solo a saludar "Hola Mundo", es decir, no necesitamos esta funcion "saludar()" solo sera incluida una funcion la de "saludarHolaMundo()", veamos como lo podemos hacer
+
+
+// Para especificar que solo queremos incluir "HolaMundo()" usamos la sintaxis de "desestructuracion", la sintaxis de "desestructuracion", nos permite tomar ciertas propiedades de los objetos en JavaScript de forma muy concisa
